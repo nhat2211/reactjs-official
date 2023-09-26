@@ -5,7 +5,7 @@ import  React,{ Component } from "react"
 export default class Navigation extends Component {
     render() {
       return(
-       <div>
+      
         <nav className="navbar navbar-dark navbar-expand-sm fixed-top">
         <button className="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#Navbar">
@@ -26,7 +26,7 @@ export default class Navigation extends Component {
         </div>
             
         </nav>
-       </div>
+      
   
       )
     }

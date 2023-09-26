@@ -40,3 +40,17 @@
 .navbar-dark {
   background-color: #512da8;
 }
+
+.footer {
+  background-color: #D1C4E9;
+  margin: 0px auto;
+  padding: 20px 0px 20px 0px;
+}
+
+.player{
+  margin-top: 65px;
+}
+
+.card{
+  text-align: center;
+}
