@@ -1,15 +1,14 @@
 import { Component } from "react";
 
-export default class Footer extends Component {
+export default function Footer() {
 
-    render(){
         return(
 
-            <footer class="footer">
-                <div class="container">
+            <footer className="footer">
+                <div className="container">
 
-                <div class="row justify-content-center">
-        <div class="col-auto">             
+                <div className="row justify-content-center">
+        <div className="col-auto">             
             <div>
                 <p>© Copyright 2018 Ristorante Con Fusion</p>
             </div>
@@ -22,7 +21,7 @@ export default class Footer extends Component {
         
 
         )
-    }
+    
 
     
 }

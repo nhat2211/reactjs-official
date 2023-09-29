@@ -2,13 +2,12 @@ import React, { Component } from "react";
 
 import Players from "../shared/Players"
 
-export default class Player extends Component {
-    render() {
+export default function PlayersPresentation({players}) {
         return (
 
             <div className="container player">
                  <div className="row row-content">
-                 {Players.map((player) => (
+                 {players.map((player) => (
                        
                             <div className="col col-sm-4 col-md-4" key={player.id}>
                                 <div className="card">
@@ -43,6 +42,4 @@ export default class Player extends Component {
         )
 
 
-
-    }
 }

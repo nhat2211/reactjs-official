@@ -2,8 +2,7 @@ import  React,{ Component } from "react"
 
 
 
-export default class Navigation extends Component {
-    render() {
+export default function Navigation() {
       return(
       
         <nav className="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -18,9 +17,9 @@ export default class Navigation extends Component {
                 <li className="nav-item"><a className="nav-link"  href="#new">
                 <span className="fa fa-list fa-lg"></span>New</a></li>
                 <li className="nav-item"><a className="nav-link"  href="#about">
-                <span class="fa fa-info fa-lg"></span>About</a></li>
+                <span className="fa fa-info fa-lg"></span>About</a></li>
                 <li className="nav-item"><a className="nav-link"  href="#contact">
-                <span class="fa fa-address-card fa-lg"></span>Contact</a></li>
+                <span className="fa fa-address-card fa-lg"></span>Contact</a></li>
             </ul>
 
         </div>
@@ -29,5 +28,5 @@ export default class Navigation extends Component {
       
   
       )
-    }
+   
   }
