@@ -2,10 +2,25 @@ import React, { Component } from "react";
 
 import Players from "../shared/Players"
 
+import { useState, useEffect } from "react";
+
 export default function PlayersPresentation({players}) {
+    const[player, setPlayer] = useState([]);
+
+    // const[showPopup, setShowPopup] = useState(false);
+
+    // useEffect(()=>{
+       
+       
+    // },[showPopup]);
+
+    const hidePopup = () => {
+        window.location.href = "/#";
+    }
         return (
 
-            <div className="container player">
+            <div onClick={hidePopup} className="container player" >
+                <a href="#"></a>
                  <div className="row row-content">
                  {players.map((player) => (
                        
@@ -14,22 +29,24 @@ export default function PlayersPresentation({players}) {
                                     <img src={player.img} />
                                     <h3>{player.name}</h3>
                                     <p className="title">{player.club}</p>
-                                    <p><button className="btn btn-dark btn-lg btn-block">Detail</button></p>
+                                    <p><button onClick={()=>{setPlayer(player)}} className="btn btn-dark btn-lg btn-block">
+                                        <a href="#popup" id="openPopup">Detail</a></button></p>
                                 </div>
                             </div>
-
-                        
-                      
-
-        
-
-                   
-
-
-
-
-
                 ))}
+
+                <div id="popup" className="overlay">
+                    <div className="popup">
+                        <img src={player.img}/>
+                        <h2>{player.name}</h2>
+                        <a className="close" href="#">&times;</a>
+                        <div className="content">
+                            {player.info}
+                        </div>
+                    </div>
+
+
+                </div>
 
 
 
