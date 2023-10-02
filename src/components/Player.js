@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 export default function PlayersPresentation({players}) {
     const[player, setPlayer] = useState([]);
+    const[showPopup, setShowPopup] = useState(false);
 
     // const[showPopup, setShowPopup] = useState(false);
 
@@ -15,8 +16,12 @@ export default function PlayersPresentation({players}) {
     // },[showPopup]);
 
     const hidePopup = () => {
-        window.location.href = "/#";
+        setShowPopup(false);
+      
+        if(!showPopup) window.location.href = "/#";
     }
+
+
         return (
 
             <div onClick={hidePopup} className="container player" >
@@ -29,7 +34,7 @@ export default function PlayersPresentation({players}) {
                                     <img src={player.img} />
                                     <h3>{player.name}</h3>
                                     <p className="title">{player.club}</p>
-                                    <p><button onClick={()=>{setPlayer(player)}} className="btn btn-dark btn-lg btn-block">
+                                    <p><button onClick={()=>{setPlayer(player);setShowPopup(true)}} className="btn btn-dark btn-lg btn-block">
                                         <a href="#popup" id="openPopup">Detail</a></button></p>
                                 </div>
                             </div>

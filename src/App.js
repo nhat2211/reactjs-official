@@ -4,13 +4,15 @@ import Navigation from './components/Navigation';
 import PlayersPresentation from './components/Player';
 import Footer from './components/Footer';
 import Main from './components/Main';
+import Demo from './components/Demo';
 
 function App() {
   return (
     <div>
-      <Navigation className="App"/>
+      {/* <Demo/> */}
+      <Navigation className="App" />
        {/* <PlayersPresentation/> */}
-      <Main name="test"/>
+      <Main/>
       <Footer/>
     </div>
    
