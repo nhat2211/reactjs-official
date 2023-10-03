@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 .App-link {
@@ -37,9 +37,9 @@
   }
 }
 
-.navbar-dark {
+/* .navbar-dark {
   background-color: #512da8;
-}
+} */
 
 .footer {
   background-color: #D1C4E9;
@@ -106,4 +106,8 @@
     max-height: 30%;
     overflow: auto;
   }
+  .navbar-nav {
+    --bs-nav-link-color: #a4c7f9;
+  }
+  
 

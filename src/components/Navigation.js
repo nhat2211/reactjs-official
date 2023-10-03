@@ -1,11 +1,15 @@
 import  React,{ Component } from "react"
+import { useContext } from "react"
+import { ThemeContext } from "./ThemeContext"
 
 
 
 export default function Navigation() {
+  const{theme,toggle,dark} = useContext(ThemeContext);
       return(
       
-        <nav className="navbar navbar-dark navbar-expand-sm fixed-top">
+        <nav style={{backgroundColor: theme.backgroundColor, color: theme.color}}
+         className="navbar navbar-expand-sm fixed-top">
         <button className="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#Navbar">
         <span className="navbar-toggler-icon"></span>
@@ -21,6 +25,21 @@ export default function Navigation() {
                 <li className="nav-item"><a className="nav-link"  href="#contact">
                 <span className="fa fa-address-card fa-lg"></span>Contact</a></li>
             </ul>
+
+            <div style={{position: 'relative'}}>
+
+            <input type="checkbox" checked data-toggle="toggle" data-size="lg"/>
+            
+          <a className='switch-mode' href='#' onClick={toggle}
+          style={{
+            backgroundColor: theme.backgroundColor,
+            color: theme.color,
+            outline: 'none'
+          }} data-testid="toggle-theme-btn"
+        >
+          Switch Nav to {!dark ? 'Dark' : 'Light'} mode
+         </a>
+         </div>
 
         </div>
             
