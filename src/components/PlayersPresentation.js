@@ -2,10 +2,15 @@ import React, { Component } from "react";
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CartProvider, { CartContext } from "./CartContext";
+import { useContext } from "react";
 
 export default function PlayersPresentation({players}) {
     const[player, setPlayer] = useState([]);
     const[showPopup, setShowPopup] = useState(false);
+
+    const{count,addToCart} = useContext(CartContext);
+    
 
         return (
 
@@ -26,7 +31,7 @@ export default function PlayersPresentation({players}) {
                                         Detail</button></p>
                                     </Link>
                                     
-                                        <p><button onClick={()=>{}} className="btn btn-primary btn-lg btn-block">
+                                        <p><button onClick={addToCart} className="btn btn-primary btn-lg btn-block">
                                         Add To Cart</button></p>
                                 </div>
                             </div>

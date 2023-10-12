@@ -11,6 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 import Contact from './components/Contact';
 import { createContext, useState } from 'react';
 import Detail from './components/Detail';
+import CartProvider from './components/CartContext';
 
 function App() {
   const CartContext = createContext();
@@ -18,6 +19,8 @@ function App() {
     <div>
     
       <Navigation className="App" />
+
+      {/* <Cart/> */}
 
       <Routes>
 
