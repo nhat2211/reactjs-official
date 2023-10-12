@@ -1,32 +1,17 @@
 import React, { Component } from "react";
 
-import Players from "../shared/Players"
-
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function PlayersPresentation({players}) {
     const[player, setPlayer] = useState([]);
     const[showPopup, setShowPopup] = useState(false);
 
-    // const[showPopup, setShowPopup] = useState(false);
-
-    // useEffect(()=>{
-       
-       
-    // },[showPopup]);
-
-    const hidePopup = () => {
-        setShowPopup(false);
-      
-        if(!showPopup) window.location.href = "/#";
-    }
-
-
         return (
 
-            <div onClick={hidePopup} className="container player" >
-                <a href="#"></a>
-                 <div className="row row-content">
+            <div className="container player" >
+               
+                 <div  className="row row-content player">
                  {players.map((player) => (
                        
                             <div className="col col-sm-4 col-md-4" key={player.id}>
@@ -34,13 +19,20 @@ export default function PlayersPresentation({players}) {
                                     <img src={player.img} />
                                     <h3>{player.name}</h3>
                                     <p className="title">{player.club}</p>
-                                    <p><button onClick={()=>{setPlayer(player);setShowPopup(true)}} className="btn btn-dark btn-lg btn-block">
-                                        <a href="#popup" id="openPopup">Detail</a></button></p>
+                                    <Link to={`detail/${player.id}`}>
+                            
+
+                                        <p><button className="btn btn-dark btn-lg btn-block">
+                                        Detail</button></p>
+                                    </Link>
+                                    
+                                        <p><button onClick={()=>{}} className="btn btn-primary btn-lg btn-block">
+                                        Add To Cart</button></p>
                                 </div>
                             </div>
                 ))}
 
-                <div id="popup" className="overlay">
+                {/* <div id="popup" className="overlay">
                     <div className="popup">
                         <img src={player.img}/>
                         <h2>{player.name}</h2>
@@ -51,7 +43,7 @@ export default function PlayersPresentation({players}) {
                     </div>
 
 
-                </div>
+                </div> */}
 
 
 
