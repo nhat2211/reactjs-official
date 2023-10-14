@@ -12,15 +12,19 @@ import Contact from './components/Contact';
 import { createContext, useState } from 'react';
 import Detail from './components/Detail';
 import CartProvider from './components/CartContext';
+import NavigationMUI from './components/NavigationMUI';
 
 function App() {
   const CartContext = createContext();
   return (
     <div>
     
-      <Navigation className="App" />
+      {/* <Navigation className="App" /> */}
+      <NavigationMUI/>
 
       {/* <Cart/> */}
+
+    
 
       <Routes>
 
